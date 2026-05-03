@@ -92,6 +92,10 @@ define( 'WP_DEBUG_DISPLAY', true );
 define( 'WP_HOME', getenv('WP_HOME') ?: 'http://localhost' );
 define( 'WP_SITEURL', getenv('WP_SITEURL') ?: 'http://localhost' );
 
+if ( isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
+    $_SERVER['HTTPS'] = 'on';
+}
+
 /* Add any custom values between this line and the "stop editing" line. */
 
 
