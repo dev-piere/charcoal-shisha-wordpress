@@ -20,7 +20,7 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'charcoal_shisha_indonesia' );
+define( 'DB_NAME', getenv('WORDPRESS_DB_NAME') ?: 'charcoal_shisha_indonesia' );
 
 /** Database username */
 define( 'DB_USER', getenv('WORDPRESS_DB_USER') ?: 'root' );
