@@ -89,6 +89,9 @@ define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 define( 'WP_DEBUG_DISPLAY', true );
 
+define( 'WP_HOME', getenv('WP_HOME') ?: 'http://localhost' );
+define( 'WP_SITEURL', getenv('WP_SITEURL') ?: 'http://localhost' );
+
 /* Add any custom values between this line and the "stop editing" line. */
 
 
