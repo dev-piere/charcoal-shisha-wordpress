@@ -1,0 +1,26 @@
+services:
+  wordpress:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: charcoal_shisha_indonesia
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: rootpassword
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: charcoal_shisha_indonesia
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./charcoal_shisha_indonesia.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+
+volumes:
+  db_data:
